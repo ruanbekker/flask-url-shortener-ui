@@ -1,0 +1,26 @@
+version: "3.4"
+
+services:
+  web:
+    image: rbekker87/tiny-url:ui
+    networks:
+      - mynetwork
+    environment:
+      - TINY_API_URL=https://tiny-api.mydomain.com/create
+      - X_API_KEY=someSecretApiKey098
+      - APP_TITLE=My URL Shortener
+    deploy:
+      placement:
+        constraints: [node.role == worker]
+      labels:
+        traefik.port: 8080
+        traefik.frontend.rule: "Host: tiny-url.mydomain.com"
+        traefik.docker.network: "mynetwork"
+      mode: replicated
+      replicas: 1
+      restart_policy:
+        condition: any
+
+networks:
+  mynetwork:
+    external: true

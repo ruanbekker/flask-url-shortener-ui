@@ -5,7 +5,10 @@ URL Shortener UI in Python Flask
 
 ## Blog Post
 
-Blogpost about this is available: 
+To setup the API on AWS, running on API Gateway, Lambda and DynamoDB:
+- https://blog.ruanbekker.com/blog/2018/11/30/how-to-setup-a-serverless-url-shortener-with-api-gateway-lambda-and-dynamodb-on-aws/
+
+To setup the UI on Python Flask (this codebase): 
 
 - https://blog.ruanbekker.com/blog/2018/12/18/creating-a-ui-in-python-flask-and-bootstrap-for-our-serverless-url-shortener/
 
